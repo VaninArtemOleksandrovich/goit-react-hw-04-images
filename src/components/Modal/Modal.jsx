@@ -17,11 +17,6 @@ export const Modal = ({ onClose, currentImage }) => {
     };
   }, [onClose]);
 
-  // useEffect(() => {
-  //   return () => {
-  //     window.removeEventListener('keydown', handleKeyModalClose);
-  //   };
-  // }, []);
 
   const handleBackdropClick = e => {
     if (e.target === e.currentTarget) {

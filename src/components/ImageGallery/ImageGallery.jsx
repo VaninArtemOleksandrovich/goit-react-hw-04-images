@@ -19,16 +19,7 @@ export const ImageGallery = ({ value, onClick }) => {
   const [images, setImages] = useState([]);
   const [status, setStatus] = useState(pageStatus.INIT);
 
-  // async componentDidMount() {
-  //   this.setState({ status: pageStatus.LOADING });
 
-  //   try {
-  //     const data = await getImage(this.props.value);
-  //     this.setState({ images: data, status: pageStatus.SUCCESS });
-  //   } catch {
-  //     this.setState({ status: pageStatus.ERROR });
-  //   }
-  // }
 
   useEffect(() => {
     setStatus(pageStatus.LOADING);
@@ -43,25 +34,10 @@ export const ImageGallery = ({ value, onClick }) => {
       }
     }
     getData();
-    // eslint-disable-next-line
+  
   }, []);
 
-  //  componentDidUpdate(prevProps, prevState) {
-  //   if (prevProps.value !== this.props.value) {
-  //     const newData = await getImage(this.props.value);
-  //     this.setState({ images: newData });
-  //   }
-
-  //   if (
-  //     prevState.page !== this.state.page &&
-  //     prevProps.value === this.props.value
-  //   ) {
-  //     const newPage = await getImage(this.props.value, this.state.page);
-  //     this.setState(prevState => ({
-  //       images: [...prevState.images, ...newPage],
-  //     }));
-  //   }
-  // }
+ 
 
   useEffect(() => {
     async function getData() {
@@ -79,12 +55,10 @@ export const ImageGallery = ({ value, onClick }) => {
       }
       getData();
     }
-    // eslint-disable-next-line
+    
   }, [page]);
 
-  // const handleLoadMore = () => {
-  //   this.setState(prevState => ({ page: prevState.page + 1 }));
-  // };
+  
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
